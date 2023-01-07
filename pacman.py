@@ -9,8 +9,20 @@ map = [
     "|--------|",
     "|G..|..G.|",
     "|...PP...|",
-    "|G....@|.|",
+    "|G...@.|.|",
     "|........|",
     "|--------|"
 ]
 
+# Finding Pacman
+def find_pacman(map):
+    pacman_x = -1
+    pacman_y = -1
+
+    for x in range(len(map)):   # len(map) = number of rows
+        for y in range(len(map[x])):    # len(map[x]) = number of columns 
+            if map[x][y] == "@":    # "@" = Pacman
+                pacman_x = x
+                pacman_y = y
+    
+    return pacman_x, pacman_y
